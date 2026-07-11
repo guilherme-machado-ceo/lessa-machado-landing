@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt" dir="ltr">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
 
   <meta
     name="description"
-    content="Paradiplomacia digital, advocacy lícito, marketing geopolítico e estratégia institucional orientada a compliance, governança e risco."
+    content="Paradiplomacia digital, advocacy e representação lícita de interesses, marketing geopolítico, compliance, governança e risco."
   >
 
   <style>
@@ -21,15 +21,12 @@
     :root {
       --ink: #0d0d0d;
       --paper: #f8f7f4;
-      --paper-dark: #ece9e2;
+      --card-gray: #efede8;
       --accent: #1a1a2e;
-      --muted: #6b6b6b;
+      --muted: #666666;
       --line: #dfdcd5;
-
       --serif: Georgia, "Times New Roman", serif;
       --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-
-      --radius: 2px;
       --max: 820px;
     }
 
@@ -41,102 +38,89 @@
       background: var(--paper);
       color: var(--ink);
       font-family: var(--sans);
-      font-size: clamp(15px, 1.6vw, 17px);
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.65;
     }
-
-    /* Barra de idiomas */
-
-    #lang-bar {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 4px;
-      padding: 8px 16px;
-      background: var(--accent);
-    }
-
-    #lang-bar .lang-label {
-      margin-right: 6px;
-      color: rgba(255, 255, 255, 0.42);
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .lang-btn {
-      padding: 3px 9px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: var(--radius);
-      background: transparent;
-      color: rgba(255, 255, 255, 0.65);
-      cursor: pointer;
-      font-family: var(--sans);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: 0.2s ease;
-    }
-
-    .lang-btn:hover,
-    .lang-btn.active {
-      border-color: rgba(255, 255, 255, 0.55);
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-    }
-
-    /* Layout */
 
     main {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 100px 24px 80px;
+      padding: 50px 24px 80px;
     }
 
     section {
-      padding: 60px 0;
+      padding: 62px 0;
       border-bottom: 1px solid var(--line);
     }
 
-    section:last-of-type {
-      border-bottom: 0;
+    h1,
+    h2 {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 400;
     }
 
-    /* Logo no cabeçalho */
+    h1 {
+      max-width: 660px;
+      margin-bottom: 22px;
+      font-size: clamp(34px, 6vw, 58px);
+      letter-spacing: -0.025em;
+      line-height: 1.08;
+    }
+
+    h1 em {
+      border-bottom: 1px solid var(--accent);
+      font-style: normal;
+    }
+
+    h2 {
+      margin-bottom: 28px;
+      font-size: clamp(25px, 3vw, 33px);
+      letter-spacing: -0.015em;
+      line-height: 1.15;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 0.13em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    p {
+      max-width: 650px;
+      color: var(--muted);
+    }
+
+    /* Cabeçalho da marca */
 
     .brand-header {
       display: flex;
       align-items: center;
-      gap: 15px;
-      padding: 40px 0 32px;
+      gap: 16px;
+      padding-bottom: 32px;
       border-bottom: 1px solid var(--line);
     }
 
     .header-monogram {
-      width: 45px;
-      height: 45px;
-      flex: 0 0 45px;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
+      width: 46px;
+      height: 46px;
+      flex: 0 0 46px;
     }
 
     .brand-name {
+      display: block;
       color: var(--accent);
       font-family: var(--serif);
-      font-size: clamp(19px, 2.8vw, 27px);
+      font-size: 25px;
       font-weight: 400;
-      letter-spacing: 0.01em;
-      line-height: 1.15;
+      line-height: 1.05;
     }
 
-    .brand-sub {
+    .brand-subtitle {
+      display: block;
       margin-top: 5px;
       color: var(--muted);
       font-size: 9px;
@@ -147,38 +131,23 @@
     /* Hero */
 
     .hero {
-      padding: 56px 0 64px;
+      padding: 70px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .eyebrow {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: var(--muted);
       font-size: 11px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    h1 {
-      max-width: 650px;
-      margin-bottom: 22px;
-      color: var(--accent);
-      font-family: var(--serif);
-      font-size: clamp(27px, 4.8vw, 47px);
-      font-weight: 400;
-      line-height: 1.2;
-    }
-
-    h1 em {
-      border-bottom: 1px solid var(--accent);
-      font-style: normal;
-    }
-
     .lead {
-      max-width: 570px;
-      margin-bottom: 34px;
-      color: var(--muted);
-      font-size: clamp(15px, 1.7vw, 18px);
+      max-width: 590px;
+      margin-bottom: 32px;
+      font-size: 18px;
+      line-height: 1.6;
     }
 
     .cta-row {
@@ -187,177 +156,140 @@
       gap: 12px;
     }
 
-    .btn-primary,
-    .btn-ghost {
+    .button {
       display: inline-block;
-      padding: 12px 24px;
-      border-radius: var(--radius);
-      font-size: 12px;
+      padding: 12px 22px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-decoration: none;
       text-transform: uppercase;
       transition: 0.2s ease;
     }
 
-    .btn-primary {
-      border: 1px solid var(--accent);
+    .button.primary {
       background: var(--accent);
-      color: #fff;
+      color: #ffffff;
     }
 
-    .btn-primary:hover {
-      opacity: 0.82;
-    }
-
-    .btn-ghost {
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: var(--accent);
-    }
-
-    .btn-ghost:hover {
+    .button:hover {
       background: var(--accent);
-      color: #fff;
-    }
-
-    /* Seções */
-
-    h2 {
-      margin-bottom: 30px;
-      color: var(--accent);
-      font-family: var(--serif);
-      font-size: clamp(20px, 2.9vw, 28px);
-      font-weight: 400;
-    }
-
-    h3 {
-      margin-bottom: 10px;
-      color: var(--muted);
-      font-size: 12px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    p {
-      max-width: 650px;
-      margin-bottom: 14px;
-      color: var(--muted);
+      color: #ffffff;
     }
 
     /* Serviços */
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1px;
-      overflow: hidden;
       border: 1px solid var(--line);
       background: var(--line);
     }
 
     .service-card {
-      min-height: 250px;
-      padding: 28px 22px;
+      min-height: 260px;
+      padding: 28px 24px;
       background: var(--paper);
-      transition: background 0.2s ease;
     }
 
-    .service-card:hover {
-      background: #f1eee8;
-    }
-
-    .service-card .icon {
+    .service-icon {
       display: block;
       margin-bottom: 14px;
-      font-size: 20px;
-    }
-
-    .service-card h3 {
-      margin-bottom: 8px;
-      color: var(--accent);
-      font-size: 11px;
+      font-size: 21px;
     }
 
     .service-card p {
-      margin: 0;
       font-size: 13px;
+      line-height: 1.62;
     }
 
-    /* Card cinza: logomarca LM */
+    .service-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .tag {
+      padding: 3px 8px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Card cinza com a marca LM recriada inline */
 
     .logo-card {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 250px;
-      padding: 34px 26px;
-      background: var(--paper-dark);
-    }
-
-    .logo-card:hover {
-      background: var(--paper-dark);
+      min-height: 260px;
+      padding: 28px 24px;
+      background: var(--card-gray);
     }
 
     .logo-lockup {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 16px;
+      gap: 18px;
       color: var(--accent);
     }
 
     .logo-monogram {
-      width: 74px;
-      height: 74px;
-      flex: 0 0 74px;
+      width: 78px;
+      height: 78px;
+      flex: 0 0 78px;
     }
 
     .logo-wordmark {
       display: flex;
       flex-direction: column;
-      min-width: 0;
     }
 
     .logo-name {
       color: var(--accent);
       font-family: var(--serif);
-      font-size: clamp(20px, 2.4vw, 28px);
+      font-size: clamp(22px, 2.7vw, 30px);
       font-weight: 400;
-      letter-spacing: 0.005em;
-      line-height: 1.08;
+      letter-spacing: -0.02em;
+      line-height: 1;
       white-space: nowrap;
     }
 
     .logo-subtitle {
-      margin-top: 7px;
+      margin-top: 8px;
       color: var(--muted);
-      font-family: var(--sans);
       font-size: 9px;
-      font-weight: 500;
-      letter-spacing: 0.24em;
-      line-height: 1.3;
+      font-weight: 600;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       white-space: nowrap;
     }
 
     /* Tríplice Hélice */
 
-    .helix-row {
+    .helix-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      margin-bottom: 26px;
       border: 1px solid var(--line);
       background: var(--line);
     }
 
     .helix-cell {
-      padding: 24px 18px;
+      padding: 25px 18px;
       background: var(--paper);
       text-align: center;
     }
 
-    .h-label {
+    .helix-index {
+      display: block;
       margin-bottom: 8px;
       color: var(--muted);
       font-size: 10px;
@@ -365,80 +297,54 @@
       text-transform: uppercase;
     }
 
-    .h-title {
+    .helix-title {
       color: var(--accent);
       font-family: var(--serif);
-      font-size: 15px;
+      font-size: 16px;
     }
 
     .helix-note {
-      max-width: 630px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    /* Tags */
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
-    }
-
-    .tag {
-      padding: 4px 10px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      max-width: 650px;
+      margin-top: 22px;
+      font-size: 14px;
     }
 
     /* Contato */
 
-    .contact-block {
-      max-width: 500px;
-      padding: 40px 36px;
-      border-radius: var(--radius);
+    .contact-box {
+      max-width: 540px;
+      padding: 36px;
       background: var(--accent);
     }
 
-    .contact-block h3 {
+    .contact-box h3 {
       margin-bottom: 16px;
       color: rgba(255, 255, 255, 0.52);
-      font-size: 10px;
-      letter-spacing: 0.18em;
     }
 
-    .contact-block a {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
+    .contact-box a {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
       font-family: var(--serif);
-      font-size: clamp(14px, 2vw, 18px);
+      font-size: clamp(15px, 2vw, 20px);
       text-decoration: none;
       word-break: break-word;
     }
 
-    .contact-block a:hover {
-      border-color: #fff;
-    }
-
-    .contact-note {
-      margin: 14px 0 0;
-      color: rgba(255, 255, 255, 0.52);
+    .contact-box p {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.58);
       font-size: 12px;
     }
 
     /* Rodapé */
 
     footer {
-      padding: 36px 0 20px;
       border-top: 1px solid var(--line);
+      padding: 34px 24px 24px;
     }
 
-    .footer-grid {
+    .footer-inner {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -446,23 +352,16 @@
       gap: 20px;
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 24px;
     }
 
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .footer-brand-name {
+    .footer-brand {
       color: var(--accent);
       font-family: var(--serif);
       font-size: 15px;
     }
 
     .footer-note {
-      margin-top: 4px;
+      margin-top: 5px;
       color: var(--muted);
       font-size: 11px;
     }
@@ -470,53 +369,33 @@
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
     }
 
     .footer-links a {
       color: var(--muted);
       font-size: 11px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-decoration: none;
     }
 
     .footer-links a:hover {
-      color: var(--ink);
+      color: var(--accent);
     }
 
-    /* Internacionalização — blocos e spans */
-
-    [data-lang] {
-      display: none;
-    }
-
-    .lang-block.active {
-      display: block;
-    }
-
-    .lang-inline.active {
-      display: inline;
-    }
-
-    @media (max-width: 520px) {
-      .brand-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+    @media (max-width: 620px) {
+      main {
+        padding: 38px 18px 64px;
       }
 
-      .helix-row {
+      .services-grid,
+      .helix-grid {
         grid-template-columns: 1fr;
-      }
-
-      .logo-card {
-        min-height: 215px;
-        padding: 28px 18px;
       }
 
       .logo-lockup {
         flex-direction: column;
-        gap: 12px;
+        gap: 14px;
         text-align: center;
       }
 
@@ -528,123 +407,238 @@
       .logo-subtitle {
         white-space: normal;
       }
+
+      .contact-box {
+        padding: 28px 24px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <nav id="lang-bar" aria-label="Seleção de idioma">
-    <span class="lang-label">Lang</span>
-
-    <button class="lang-btn active" type="button" data-switch="pt">PT</button>
-    <button class="lang-btn" type="button" data-switch="en">EN</button>
-    <button class="lang-btn" type="button" data-switch="es">ES</button>
-    <button class="lang-btn" type="button" data-switch="fr">FR</button>
-    <button class="lang-btn" type="button" data-switch="ar">AR</button>
-    <button class="lang-btn" type="button" data-switch="zh">ZH</button>
-    <button class="lang-btn" type="button" data-switch="ru">RU</button>
-  </nav>
-
   <main>
 
     <header class="brand-header">
-      <svg class="header-monogram" viewBox="0 0 80 80" fill="none"
-           xmlns="http://www.w3.org/2000/svg"
-           role="img"
-           aria-label="Monograma LM">
+      <svg
+        class="header-monogram"
+        viewBox="0 0 80 80"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Monograma LM"
+      >
+        <rect
+          x="4"
+          y="4"
+          width="72"
+          height="72"
+          rx="1"
+          stroke="#1a1a2e"
+          stroke-width="1.2"
+        />
 
-        <rect x="4" y="4" width="72" height="72" rx="1"
-              stroke="#1a1a2e" stroke-width="1.2"/>
+        <path
+          d="M22 57V23L38 47L54 23V57"
+          stroke="#1a1a2e"
+          stroke-width="2.2"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+        />
 
-        <path d="M22 57V23L38 47L54 23V57"
-              stroke="#1a1a2e"
-              stroke-width="2.2"
-              stroke-linecap="square"
-              stroke-linejoin="miter"/>
+        <path
+          d="M22 57H43"
+          stroke="#1a1a2e"
+          stroke-width="2.2"
+          stroke-linecap="square"
+        />
 
-        <path d="M22 57H43"
-              stroke="#1a1a2e"
-              stroke-width="2.2"
-              stroke-linecap="square"/>
-
-        <path d="M54 57H62"
-              stroke="#1a1a2e"
-              stroke-width="2.2"
-              stroke-linecap="square"/>
+        <path
+          d="M54 57H62"
+          stroke="#1a1a2e"
+          stroke-width="2.2"
+          stroke-linecap="square"
+        />
       </svg>
 
-      <div class="brand-text">
+      <div>
         <span class="brand-name">Lessa Machado</span>
-        <span class="brand-sub">Negócios &amp; Cia</span>
+        <span class="brand-subtitle">Negócios &amp; Cia</span>
       </div>
     </header>
 
     <section class="hero">
-      <p class="eyebrow">
-        <span class="lang-inline active" data-lang="pt">Consultoria Estratégica Internacional</span>
-        <span class="lang-inline" data-lang="en">International Strategic Consultancy</span>
-        <span class="lang-inline" data-lang="es">Consultoría Estratégica Internacional</span>
-        <span class="lang-inline" data-lang="fr">Conseil Stratégique International</span>
-        <span class="lang-inline" data-lang="ar">استشارات استراتيجية دولية</span>
-        <span class="lang-inline" data-lang="zh">国际战略咨询</span>
-        <span class="lang-inline" data-lang="ru">Международный стратегический консалтинг</span>
-      </p>
+      <p class="eyebrow">Consultoria Estratégica Internacional</p>
 
-      <h1 class="lang-block active" data-lang="pt">
+      <h1>
         Onde <em>mercados emergentes</em> encontram estratégia geopolítica.
       </h1>
 
-      <p class="lead lang-block active" data-lang="pt">
-        Paradiplomacia digital, advocacy lícito e marketing de nicho com lente de blocos econômicos — ancorados na Tríplice Hélice da Inovação.
+      <p class="lead">
+        Paradiplomacia digital, advocacy e representação lícita de interesses,
+        marketing geopolítico e comunicação institucional conectados a compliance,
+        governança e gestão de risco.
       </p>
 
-      <h1 class="lang-block" data-lang="en">
-        Where <em>emerging markets</em> meet geopolitical strategy.
-      </h1>
+      <div class="cta-row">
+        <a class="button primary" href="#servicos">Conheça os serviços</a>
+        <a class="button" href="#contato">Fale conosco</a>
+      </div>
+    </section>
 
-      <p class="lead lang-block" data-lang="en">
-        Digital paradiplomacy, lawful advocacy and niche marketing through the lens of economic blocs — anchored in the Triple Helix of Innovation.
+    <section id="servicos">
+      <h2>Serviços</h2>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <span class="service-icon" aria-hidden="true">🌐</span>
+
+          <h3>Paradiplomacia Digital</h3>
+
+          <p>
+            Articulação estratégica entre entidades subnacionais, ambientes digitais,
+            redes de cooperação, blocos econômicos e fóruns internacionais.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-icon" aria-hidden="true">🏛️</span>
+
+          <h3>Advocacy &amp; Representação Lícita</h3>
+
+          <p>
+            Estratégias de representação técnica de interesses por associações de
+            classe, câmaras setoriais e redes institucionais, com transparência,
+            legalidade e conformidade regulatória.
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-icon" aria-hidden="true">🗺️</span>
+
+          <h3>Marketing Geopolítico</h3>
+
+          <p>
+            Posicionamento em nichos linguísticos e mercados globais, considerando
+            blocos econômicos, cenários regulatórios, riscos de mercado e contexto
+            institucional.
+          </p>
+
+          <div class="service-tags" aria-label="Blocos e redes de interesse">
+            <span class="tag">BRICS+</span>
+            <span class="tag">Mercosul</span>
+            <span class="tag">UE</span>
+            <span class="tag">ASEAN</span>
+            <span class="tag">G20</span>
+            <span class="tag">CPLP</span>
+            <span class="tag">UA</span>
+            <span class="tag">OIC</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <span class="service-icon" aria-hidden="true">⚖️</span>
+
+          <h3>Marketing, Compliance &amp; Governança</h3>
+
+          <p>
+            Comunicação institucional e estratégias de mercado alinhadas a ISO 27001,
+            ISO 31000, ISO 42001, ESG, LGPD e gestão de risco reputacional.
+          </p>
+        </article>
+
+        <!-- Card cinza com a nova logomarca -->
+        <article class="logo-card" aria-label="Lessa Machado Negócios e Cia">
+          <div class="logo-lockup">
+
+            <svg
+              class="logo-monogram"
+              viewBox="0 0 80 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Monograma LM"
+            >
+              <rect
+                x="4"
+                y="4"
+                width="72"
+                height="72"
+                rx="1"
+                stroke="currentColor"
+                stroke-width="1.2"
+              />
+
+              <path
+                d="M22 57V23L38 47L54 23V57"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="square"
+                stroke-linejoin="miter"
+              />
+
+              <path
+                d="M22 57H43"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="square"
+              />
+
+              <path
+                d="M54 57H62"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="square"
+              />
+            </svg>
+
+            <div class="logo-wordmark">
+              <span class="logo-name">Lessa Machado</span>
+              <span class="logo-subtitle">Negócios &amp; Cia</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="helice">
+      <h2>A Tríplice Hélice como Alavanca</h2>
+
+      <div class="helix-grid">
+        <div class="helix-cell">
+          <span class="helix-index">I — Governo</span>
+          <span class="helix-title">Regulação &amp; Política</span>
+        </div>
+
+        <div class="helix-cell">
+          <span class="helix-index">II — Setor Privado</span>
+          <span class="helix-title">Mercado &amp; Inovação</span>
+        </div>
+
+        <div class="helix-cell">
+          <span class="helix-index">III — Ciência</span>
+          <span class="helix-title">Conhecimento &amp; P&amp;D</span>
+        </div>
+      </div>
+
+      <p class="helix-note">
+        A convergência entre Governo, Setor Privado e Ciência cria zonas de
+        oportunidade. A Lessa Machado atua nessa interseção, transformando contexto
+        regulatório, conhecimento e relações institucionais em estratégia de mercado.
       </p>
+    </section>
 
-      <h1 class="lang-block" data-lang="es">
-        Donde los <em>mercados emergentes</em> encuentran la estrategia geopolítica.
-      </h1>
+    <section id="contato">
+      <h2>Contato</h2>
 
-      <p class="lead lang-block" data-lang="es">
-        Paradiplomacia digital, incidencia lícita y marketing de nicho con lente de bloques económicos — anclados en la Triple Hélice de la Innovación.
-      </p>
+      <div class="contact-box">
+        <h3>E-mail institucional</h3>
 
-      <h1 class="lang-block" data-lang="fr">
-        Là où les <em>marchés émergents</em> rencontrent la stratégie géopolitique.
-      </h1>
+        <a href="mailto:lessamachadonegociosecia@gmail.com">
+          lessamachadonegociosecia@gmail.com
+        </a>
 
-      <p class="lead lang-block" data-lang="fr">
-        Paradiplomatie numérique, plaidoyer licite et marketing de niche au prisme des blocs économiques — ancrés dans la Triple Hélice de l'Innovation.
-      </p>
-
-      <h1 class="lang-block" data-lang="ar" dir="rtl" style="text-align:right;">
-        حيث تلتقي <em>الأسواق الناشئة</em> بالاستراتيجية الجيوسياسية.
-      </h1>
-
-      <p class="lead lang-block" data-lang="ar" dir="rtl" style="text-align:right;">
-        الدبلوماسية الرقمية الموازية، والضغط المشروع، والتسويق المتخصص بعدسة الكتل الاقتصادية — مرتكزاً على نظرية الحلزون الثلاثي للابتكار.
-      </p>
-
-      <h1 class="lang-block" data-lang="zh">
-        新兴市场与<em>地缘政治战略</em>的交汇点。
-      </h1>
-
-      <p class="lead lang-block" data-lang="zh">
-        数字准外交、合规游说与经济集团视角下的细分市场营销——以创新三螺旋理论为基础。
-      </p>
-
-      <h1 class="lang-block" data-lang="ru">
-        Там, где <em>развивающиеся рынки</em> встречают геополитическую стратегию.
-      </h1>
-
-      <p class="lead lang-block" data-lang="ru">
-        Цифровая парадипломатия, законный лоббизм и нишевой маркетинг сквозь призму экономических блоков — в основе Тройная спираль инноваций.
-      </p>
-
-      
+        <p>Rio 
