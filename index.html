@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt" dir="ltr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Lessa Machado Negócios &amp; Cia</title>
-  <meta name="description" content="Paradiplomacia Digital · Lobby Lícito · Marketing Geopolítico · Compliance &amp; Governança. Tríplice Hélice da Inovação como alavanca de mercado." />
+
+  <meta
+    name="description"
+    content="Paradiplomacia digital, advocacy lícito, marketing geopolítico e estratégia institucional orientada a compliance, governança e risco."
+  >
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     :root {
-      --ink:   #0d0d0d;
+      --ink: #0d0d0d;
       --paper: #f8f7f4;
-      --accent:#1a1a2e;
+      --paper-dark: #f0ede7;
+      --accent: #1a1a2e;
       --muted: #6b6b6b;
-      --line:  #e0ddd6;
-      --serif: 'Georgia', 'Times New Roman', serif;
-      --sans:  system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --line: #e0ddd6;
+
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
       --radius: 2px;
       --max: 820px;
     }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: var(--paper);
       color: var(--ink);
@@ -27,52 +45,69 @@
       line-height: 1.7;
     }
 
-    /* LANG BAR */
+    /* Barra de idiomas */
+
     #lang-bar {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      inset: 0 0 auto 0;
       z-index: 100;
-      background: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 4px;
       padding: 8px 16px;
-      flex-wrap: wrap;
-    }
-    #lang-bar span.lbl {
-      color: rgba(255,255,255,0.4);
-      font-size: 10px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-right: 6px;
-    }
-    .lang-btn {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.6);
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      cursor: pointer;
-      border-radius: var(--radius);
-      transition: background .2s, color .2s;
-    }
-    .lang-btn:hover, .lang-btn.active {
-      background: rgba(255,255,255,0.12);
-      color: #fff;
-      border-color: rgba(255,255,255,0.5);
+      background: var(--accent);
     }
 
-    /* LAYOUT */
+    #lang-bar .lang-label {
+      margin-right: 6px;
+      color: rgba(255, 255, 255, 0.42);
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .lang-btn {
+      padding: 3px 9px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.65);
+      cursor: pointer;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn.active {
+      border-color: rgba(255, 255, 255, 0.55);
+      background: rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+    }
+
+    /* Estrutura */
+
     main {
       max-width: var(--max);
       margin: 0 auto;
       padding: 100px 24px 80px;
     }
 
-    /* LOGO HEADER */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section:last-of-type {
+      border-bottom: 0;
+    }
+
+    /* Cabeçalho da marca */
+
     .brand-header {
       display: flex;
       align-items: center;
@@ -80,596 +115,962 @@
       padding: 40px 0 32px;
       border-bottom: 1px solid var(--line);
     }
-    .brand-header svg { flex-shrink: 0; }
-    .brand-text { display: flex; flex-direction: column; }
-    .brand-name {
-      font-family: var(--serif);
-      font-size: clamp(18px, 2.8vw, 26px);
-      font-weight: 400;
-      color: var(--accent);
-      letter-spacing: .01em;
-      line-height: 1.2;
-    }
-    .brand-sub {
-      font-size: 10px;
-      letter-spacing: .22em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 4px;
+
+    .brand-header svg {
+      flex: 0 0 auto;
     }
 
-    /* HERO */
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(19px, 2.8vw, 27px);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+
     .hero {
       padding: 56px 0 64px;
       border-bottom: 1px solid var(--line);
     }
+
     .eyebrow {
-      font-size: 11px;
-      letter-spacing: .18em;
-      text-transform: uppercase;
-      color: var(--muted);
       margin-bottom: 20px;
-    }
-    h1 {
-      font-family: var(--serif);
-      font-size: clamp(26px, 4.8vw, 46px);
-      font-weight: 400;
-      line-height: 1.22;
-      color: var(--accent);
-      max-width: 640px;
-      margin-bottom: 22px;
-    }
-    h1 em { font-style: normal; border-bottom: 1px solid var(--accent); }
-    .lead {
-      font-size: clamp(14px, 1.7vw, 17px);
       color: var(--muted);
-      max-width: 540px;
-      margin-bottom: 34px;
-    }
-    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: .1em;
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      padding: 12px 24px;
-      border: none;
-      cursor: pointer;
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: opacity .2s;
     }
-    .btn-primary:hover { opacity: .8; }
+
+    h1 {
+      max-width: 650px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(27px, 4.8vw, 47px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    h1 em {
+      border-bottom: 1px solid var(--accent);
+      font-style: normal;
+    }
+
+    .lead {
+      max-width: 570px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: clamp(15px, 1.7vw, 18px);
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary,
     .btn-ghost {
       display: inline-block;
+      padding: 12px 24px;
+      border-radius: var(--radius);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.82;
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--accent);
       background: transparent;
       color: var(--accent);
-      font-size: 12px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      padding: 12px 24px;
-      border: 1px solid var(--accent);
-      cursor: pointer;
-      border-radius: var(--radius);
-      text-decoration: none;
-      transition: background .2s, color .2s;
     }
-    .btn-ghost:hover { background: var(--accent); color: #fff; }
 
-    /* SECTIONS */
-    section { padding: 60px 0; border-bottom: 1px solid var(--line); }
-    section:last-of-type { border-bottom: none; }
+    .btn-ghost:hover {
+      background: var(--accent);
+      color: #ffffff;
+    }
+
+    /* Conteúdo */
+
     h2 {
-      font-family: var(--serif);
-      font-size: clamp(19px, 2.8vw, 26px);
-      font-weight: 400;
-      color: var(--accent);
       margin-bottom: 30px;
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.9vw, 28px);
+      font-weight: 400;
     }
-    h3 {
-      font-size: 12px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-    p { color: var(--muted); margin-bottom: 14px; max-width: 640px; }
 
-    /* SERVICES GRID */
+    h3 {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    p {
+      max-width: 650px;
+      margin-bottom: 14px;
+      color: var(--muted);
+    }
+
+    /* Serviços */
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1px;
-      background: var(--line);
+      overflow: hidden;
       border: 1px solid var(--line);
+      background: var(--line);
     }
-    .service-card {
-      background: var(--paper);
-      padding: 28px 22px;
-      transition: background .2s;
-    }
-    .service-card:hover { background: #f0ede7; }
-    .service-card .icon { font-size: 20px; margin-bottom: 14px; display: block; }
-    .service-card h3 { color: var(--accent); font-size: 11px; margin-bottom: 8px; }
-    .service-card p { font-size: 13px; margin: 0; }
 
-    /* HELIX */
+    .service-card {
+      min-height: 250px;
+      padding: 28px 22px;
+      background: var(--paper);
+      transition: background 0.2s ease;
+    }
+
+    .service-card:hover {
+      background: #f1eee8;
+    }
+
+    .service-card .icon {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 20px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 11px;
+    }
+
+    .service-card p {
+      margin: 0;
+      font-size: 13px;
+    }
+
+    /* Card da logomarca */
+
+    .logo-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 250px;
+      padding: 34px 26px;
+      background: var(--paper-dark);
+      color: var(--accent);
+    }
+
+    .logo-card:hover {
+      background: var(--paper-dark);
+    }
+
+    .logo-lockup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      text-align: left;
+    }
+
+    .logo-symbol {
+      width: 68px;
+      height: 68px;
+      flex: 0 0 68px;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .logo-name {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.4vw, 28px);
+      font-weight: 400;
+      line-height: 1.1;
+      white-space: nowrap;
+    }
+
+    .logo-subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      line-height: 1.4;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* Tríplice hélice */
+
     .helix-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
       margin-bottom: 26px;
+      border: 1px solid var(--line);
+      background: var(--line);
     }
+
     .helix-cell {
-      background: var(--paper);
       padding: 24px 18px;
+      background: var(--paper);
       text-align: center;
     }
-    .helix-cell .h-label {
-      font-size: 10px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--muted);
+
+    .h-label {
       margin-bottom: 8px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
-    .helix-cell .h-title {
+
+    .h-title {
+      color: var(--accent);
       font-family: var(--serif);
       font-size: 15px;
-      color: var(--accent);
     }
-    .helix-note { font-size: 13px; color: var(--muted); max-width: 620px; }
 
-    /* GEO TAGS */
-    .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-    .tag {
-      font-size: 10px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+    .helix-note {
+      max-width: 630px;
       color: var(--muted);
-      border: 1px solid var(--line);
-      padding: 4px 10px;
-      border-radius: var(--radius);
+      font-size: 13px;
     }
 
-    /* CONTACT */
+    /* Tags */
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* Contato */
+
     .contact-block {
-      background: var(--accent);
-      color: #fff;
+      max-width: 500px;
       padding: 40px 36px;
       border-radius: var(--radius);
-      max-width: 480px;
+      background: var(--accent);
     }
+
     .contact-block h3 {
-      color: rgba(255,255,255,0.5);
-      font-size: 10px;
-      letter-spacing: .18em;
       margin-bottom: 16px;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 10px;
+      letter-spacing: 0.18em;
     }
+
     .contact-block a {
-      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
       font-family: var(--serif);
       font-size: clamp(14px, 2vw, 18px);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255,255,255,0.3);
-      word-break: break-all;
-    }
-    .contact-block a:hover { border-color: #fff; }
-    .contact-note {
-      font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      margin-top: 14px;
-      margin-bottom: 0;
+      word-break: break-word;
     }
 
-    /* FOOTER */
+    .contact-block a:hover {
+      border-color: #ffffff;
+    }
+
+    .contact-note {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 12px;
+    }
+
+    /* Rodapé */
+
     footer {
       padding: 36px 0 20px;
       border-top: 1px solid var(--line);
     }
+
     .footer-grid {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
       max-width: var(--max);
       margin: 0 auto;
       padding: 0 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
     }
-    .footer-logo { display: flex; align-items: center; gap: 12px; }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .footer-brand-name {
+      color: var(--accent);
       font-family: var(--serif);
       font-size: 15px;
-      color: var(--accent);
     }
-    .footer-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
-    .footer-links { display: flex; flex-direction: column; gap: 5px; }
-    .footer-links a {
-      font-size: 11px;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: .06em;
-    }
-    .footer-links a:hover { color: var(--ink); }
 
-    /* I18N */
-    [data-lang] { display: none; }
-    [data-lang].active { display: block; }
-    .il { display: none; }
-    .il.active { display: inline; }
+    .footer-note {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--ink);
+    }
+
+    /* Internacionalização */
+
+    [data-lang] {
+      display: none;
+    }
+
+    [data-lang].active {
+      display: block;
+    }
+
+    .inline-lang {
+      display: none;
+    }
+
+    .inline-lang.active {
+      display: inline;
+    }
+
+    /* Responsividade */
 
     @media (max-width: 520px) {
-      .helix-row { grid-template-columns: 1fr; }
-      .brand-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+      .brand-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .helix-row {
+        grid-template-columns: 1fr;
+      }
+
+      .logo-card {
+        min-height: 215px;
+      }
+
+      .logo-lockup {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+
+      .logo-wordmark {
+        align-items: center;
+      }
+
+      .logo-name,
+      .logo-subtitle {
+        white-space: normal;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- LANG BAR -->
-<nav id="lang-bar" aria-label="Language selector">
-  <span class="lbl">Lang</span>
-  <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-  <button class="lang-btn" onclick="setLang('en')">EN</button>
-  <button class="lang-btn" onclick="setLang('es')">ES</button>
-  <button class="lang-btn" onclick="setLang('fr')">FR</button>
-  <button class="lang-btn" onclick="setLang('ar')">AR</button>
-  <button class="lang-btn" onclick="setLang('zh')">ZH</button>
-  <button class="lang-btn" onclick="setLang('ru')">RU</button>
-</nav>
+  <nav id="lang-bar" aria-label="Seleção de idioma">
+    <span class="lang-label">Lang</span>
 
-<main>
+    <button class="lang-btn active" type="button" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" type="button" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" type="button" onclick="setLang('es')">ES</button>
+    <button class="lang-btn" type="button" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" type="button" onclick="setLang('ar')">AR</button>
+    <button class="lang-btn" type="button" onclick="setLang('zh')">ZH</button>
+    <button class="lang-btn" type="button" onclick="setLang('ru')">RU</button>
+  </nav>
 
-  <!-- BRAND HEADER com logo SVG -->
-  <header class="brand-header">
-    <!-- Logomarca: símbolo tríplice hélice + wordmark -->
-    <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Lessa Machado Negócios & Cia logomarca">
-      <!-- Três arcos geométricos interligados representando a Tríplice Hélice -->
-      <!-- Arco 1 – Governo (topo) -->
-      <path d="M26 6 C14 6 6 14 6 26" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <path d="M26 6 C38 6 46 14 46 26" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <!-- Arco 2 – Setor Privado (esq) -->
-      <path d="M6 26 C6 38 14 46 26 46" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <path d="M6 26 C10 18 18 14 26 16" stroke="#1a1a2e" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="2 3"/>
-      <!-- Arco 3 – Ciência (dir) -->
-      <path d="M46 26 C46 38 38 46 26 46" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-      <path d="M46 26 C42 18 34 14 26 16" stroke="#1a1a2e" stroke-width="1" fill="none" stroke-linecap="round" stroke-dasharray="2 3"/>
-      <!-- Ponto central de convergência -->
-      <circle cx="26" cy="26" r="2.2" fill="#1a1a2e"/>
-      <!-- Três vértices -->
-      <circle cx="26" cy="6" r="1.5" fill="#1a1a2e"/>
-      <circle cx="6" cy="26" r="1.5" fill="#1a1a2e"/>
-      <circle cx="46" cy="26" r="1.5" fill="#1a1a2e"/>
-    </svg>
-    <div class="brand-text">
-      <span class="brand-name">Lessa Machado</span>
-      <span class="brand-sub">Negócios &amp; Cia</span>
-    </div>
-  </header>
+  <main>
 
-  <!-- HERO -->
-  <div class="hero">
-    <p class="eyebrow">
-      <span class="il active" data-lang="pt">Consultoria Estratégica Internacional</span>
-      <span class="il" data-lang="en">International Strategic Consultancy</span>
-      <span class="il" data-lang="es">Consultoría Estratégica Internacional</span>
-      <span class="il" data-lang="fr">Conseil Stratégique International</span>
-      <span class="il" data-lang="ar">استشارات استراتيجية دولية</span>
-      <span class="il" data-lang="zh">国际战略咨询</span>
-      <span class="il" data-lang="ru">Международный стратегический консалтинг</span>
-    </p>
+    <header class="brand-header">
+      <svg width="52" height="52" viewBox="0 0 52 52" fill="none"
+           xmlns="http://www.w3.org/2000/svg"
+           aria-label="Logomarca Lessa Machado Negócios e Cia">
 
-    <h1 data-lang="pt" class="active">Onde <em>mercados emergentes</em> encontram estratégia geopolítica.</h1>
-    <p class="lead" data-lang="pt" class="active">Paradiplomacia digital, lobby lícito e marketing de nicho com lente de blocos econômicos — ancorados na Tríplice Hélice da Inovação.</p>
+        <path d="M26 6 C14 6 6 14 6 26"
+              stroke="#1a1a2e" stroke-width="1.6"
+              fill="none" stroke-linecap="round"/>
 
-    <h1 data-lang="en">Where <em>emerging markets</em> meet geopolitical strategy.</h1>
-    <p class="lead" data-lang="en">Digital paradiplomacy, lawful lobbying and niche marketing through the lens of economic blocs — anchored in the Triple Helix of Innovation.</p>
+        <path d="M26 6 C38 6 46 14 46 26"
+              stroke="#1a1a2e" stroke-width="1.6"
+              fill="none" stroke-linecap="round"/>
 
-    <h1 data-lang="es">Donde los <em>mercados emergentes</em> encuentran la estrategia geopolítica.</h1>
-    <p class="lead" data-lang="es">Paradiplomacia digital, lobby lícito y marketing de nicho con lente de bloques económicos — anclados en la Triple Hélice de la Innovación.</p>
+        <path d="M6 26 C6 38 14 46 26 46"
+              stroke="#1a1a2e" stroke-width="1.6"
+              fill="none" stroke-linecap="round"/>
 
-    <h1 data-lang="fr">Là où les <em>marchés émergents</em> rencontrent la stratégie géopolitique.</h1>
-    <p class="lead" data-lang="fr">Paradiplomatie numérique, lobbying licite et marketing de niche au prisme des blocs économiques — ancrés dans la Triple Hélice de l'Innovation.</p>
+        <path d="M46 26 C46 38 38 46 26 46"
+              stroke="#1a1a2e" stroke-width="1.6"
+              fill="none" stroke-linecap="round"/>
 
-    <h1 data-lang="ar" dir="rtl" style="text-align:right;">حيث تلتقي <em>الأسواق الناشئة</em> بالاستراتيجية الجيوسياسية.</h1>
-    <p class="lead" data-lang="ar" dir="rtl" style="text-align:right;">الدبلوماسية الرقمية الموازية، والضغط المشروع، والتسويق المتخصص بعدسة الكتل الاقتصادية — مرتكزاً على نظرية الحلزون الثلاثي للابتكار.</p>
+        <path d="M6 26 C10 18 18 14 26 16"
+              stroke="#1a1a2e" stroke-width="1"
+              fill="none" stroke-linecap="round"
+              stroke-dasharray="2 3"/>
 
-    <h1 data-lang="zh">新兴市场与<em>地缘政治战略</em>的交汇点。</h1>
-    <p class="lead" data-lang="zh">数字准外交、合规游说与经济集团视角下的细分市场营销——以创新三螺旋理论为基础。</p>
+        <path d="M46 26 C42 18 34 14 26 16"
+              stroke="#1a1a2e" stroke-width="1"
+              fill="none" stroke-linecap="round"
+              stroke-dasharray="2 3"/>
 
-    <h1 data-lang="ru">Там, где <em>развивающиеся рынки</em> встречают геополитическую стратегию.</h1>
-    <p class="lead" data-lang="ru">Цифровая парадипломатия, законный лоббизм и нишевой маркетинг сквозь призму экономических блоков — в основе Тройная спираль инноваций.</p>
+        <circle cx="26" cy="26" r="2.2" fill="#1a1a2e"/>
+        <circle cx="26" cy="6" r="1.5" fill="#1a1a2e"/>
+        <circle cx="6" cy="26" r="1.5" fill="#1a1a2e"/>
+        <circle cx="46" cy="26" r="1.5" fill="#1a1a2e"/>
+      </svg>
 
-    <div class="cta-row">
-      <a href="#servicos" class="btn-primary">
-        <span class="il active" data-lang="pt">Conheça os serviços</span>
-        <span class="il" data-lang="en">Explore services</span>
-        <span class="il" data-lang="es">Ver servicios</span>
-        <span class="il" data-lang="fr">Nos services</span>
-        <span class="il" data-lang="ar">استكشف الخدمات</span>
-        <span class="il" data-lang="zh">了解服务</span>
-        <span class="il" data-lang="ru">Наши услуги</span>
-      </a>
-      <a href="#contato" class="btn-ghost">
-        <span class="il active" data-lang="pt">Fale conosco</span>
-        <span class="il" data-lang="en">Contact us</span>
-        <span class="il" data-lang="es">Contáctenos</span>
-        <span class="il" data-lang="fr">Nous contacter</span>
-        <span class="il" data-lang="ar">تواصل معنا</span>
-        <span class="il" data-lang="zh">联系我们</span>
-        <span class="il" data-lang="ru">Связаться</span>
-      </a>
-    </div>
-  </div>
+      <div class="brand-text">
+        <span class="brand-name">Lessa Machado</span>
+        <span class="brand-sub">Negócios &amp; Cia</span>
+      </div>
+    </header>
 
-  <!-- SERVICES -->
-  <section id="servicos">
-    <h2>
-      <span class="il active" data-lang="pt">Serviços</span>
-      <span class="il" data-lang="en">Services</span>
-      <span class="il" data-lang="es">Servicios</span>
-      <span class="il" data-lang="fr">Services</span>
-      <span class="il" data-lang="ar">الخدمات</span>
-      <span class="il" data-lang="zh">服务</span>
-      <span class="il" data-lang="ru">Услуги</span>
-    </h2>
-    <div class="services-grid">
+    <section class="hero">
+      <p class="eyebrow">
+        <span class="inline-lang active" data-lang="pt">Consultoria Estratégica Internacional</span>
+        <span class="inline-lang" data-lang="en">International Strategic Consultancy</span>
+        <span class="inline-lang" data-lang="es">Consultoría Estratégica Internacional</span>
+        <span class="inline-lang" data-lang="fr">Conseil Stratégique International</span>
+        <span class="inline-lang" data-lang="ar">استشارات استراتيجية دولية</span>
+        <span class="inline-lang" data-lang="zh">国际战略咨询</span>
+        <span class="inline-lang" data-lang="ru">Международный стратегический консалтинг</span>
+      </p>
 
-      <div class="service-card">
-        <span class="icon">🌐</span>
+      <h1 data-lang="pt" class="active">
+        Onde <em>mercados emergentes</em> encontram estratégia geopolítica.
+      </h1>
+
+      <p class="lead" data-lang="pt" class="active">
+        Paradiplomacia digital, advocacy lícito e marketing de nicho com lente de blocos econômicos — ancorados na Tríplice Hélice da Inovação.
+      </p>
+
+      <h1 data-lang="en">
+        Where <em>emerging markets</em> meet geopolitical strategy.
+      </h1>
+
+      <p class="lead" data-lang="en">
+        Digital paradiplomacy, lawful advocacy and niche marketing through the lens of economic blocs — anchored in the Triple Helix of Innovation.
+      </p>
+
+      <h1 data-lang="es">
+        Donde los <em>mercados emergentes</em> encuentran la estrategia geopolítica.
+      </h1>
+
+      <p class="lead" data-lang="es">
+        Paradiplomacia digital, incidencia lícita y marketing de nicho con lente de bloques económicos — anclados en la Triple Hélice de la Innovación.
+      </p>
+
+      <h1 data-lang="fr">
+        Là où les <em>marchés émergents</em> rencontrent la stratégie géopolitique.
+      </h1>
+
+      <p class="lead" data-lang="fr">
+        Paradiplomatie numérique, plaidoyer licite et marketing de niche au prisme des blocs économiques — ancrés dans la Triple Hélice de l'Innovation.
+      </p>
+
+      <h1 data-lang="ar" dir="rtl" style="text-align:right;">
+        حيث تلتقي <em>الأسواق الناشئة</em> بالاستراتيجية الجيوسياسية.
+      </h1>
+
+      <p class="lead" data-lang="ar" dir="rtl" style="text-align:right;">
+        الدبلوماسية الرقمية الموازية، والضغط المشروع، والتسويق المتخصص بعدسة الكتل الاقتصادية — مرتكزاً على نظرية الحلزون الثلاثي للابتكار.
+      </p>
+
+      <h1 data-lang="zh">
+        新兴市场与<em>地缘政治战略</em>的交汇点。
+      </h1>
+
+      <p class="lead" data-lang="zh">
+        数字准外交、合规游说与经济集团视角下的细分市场营销——以创新三螺旋理论为基础。
+      </p>
+
+      <h1 data-lang="ru">
+        Там, где <em>развивающиеся рынки</em> встречают геополитическую стратегию.
+      </h1>
+
+      <p class="lead" data-lang="ru">
+        Цифровая парадипломатия, законный лоббизм и нишевой маркетинг сквозь призму экономических блоков — в основе Тройная спираль инноваций.
+      </p>
+
+      <div class="cta-row">
+        <a href="#servicos" class="btn-primary">
+          <span class="inline-lang active" data-lang="pt">Conheça os serviços</span>
+          <span class="inline-lang" data-lang="en">Explore services</span>
+          <span class="inline-lang" data-lang="es">Ver servicios</span>
+          <span class="inline-lang" data-lang="fr">Nos services</span>
+          <span class="inline-lang" data-lang="ar">استكشف الخدمات</span>
+          <span class="inline-lang" data-lang="zh">了解服务</span>
+          <span class="inline-lang" data-lang="ru">Наши услуги</span>
+        </a>
+
+        <a href="#contato" class="btn-ghost">
+          <span class="inline-lang active" data-lang="pt">Fale conosco</span>
+          <span class="inline-lang" data-lang="en">Contact us</span>
+          <span class="inline-lang" data-lang="es">Contáctenos</span>
+          <span class="inline-lang" data-lang="fr">Nous contacter</span>
+          <span class="inline-lang" data-lang="ar">تواصل معنا</span>
+          <span class="inline-lang" data-lang="zh">联系我们</span>
+          <span class="inline-lang" data-lang="ru">Связаться</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <h2>
+        <span class="inline-lang active" data-lang="pt">Serviços</span>
+        <span class="inline-lang" data-lang="en">Services</span>
+        <span class="inline-lang" data-lang="es">Servicios</span>
+        <span class="inline-lang" data-lang="fr">Services</span>
+        <span class="inline-lang" data-lang="ar">الخدمات</span>
+        <span class="inline-lang" data-lang="zh">服务</span>
+        <span class="inline-lang" data-lang="ru">Услуги</span>
+      </h2>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <span class="icon">🌐</span>
+
+          <h3>
+            <span class="inline-lang active" data-lang="pt">Paradiplomacia Digital</span>
+            <span class="inline-lang" data-lang="en">Digital Paradiplomacy</span>
+            <span class="inline-lang" data-lang="es">Paradiplomacia Digital</span>
+            <span class="inline-lang" data-lang="fr">Paradiplomatie Numérique</span>
+            <span class="inline-lang" data-lang="ar">الدبلوماسية الرقمية الموازية</span>
+            <span class="inline-lang" data-lang="zh">数字准外交</span>
+            <span class="inline-lang" data-lang="ru">Цифровая парадипломатия</span>
+          </h3>
+
+          <p>
+            <span class="inline-lang active" data-lang="pt">
+              Articulação estratégica entre entidades subnacionais, blocos econômicos e ambientes digitais. Presença institucional em fóruns globais online.
+            </span>
+
+            <span class="inline-lang" data-lang="en">
+              Strategic articulation between subnational entities, economic blocs and digital environments. Institutional presence in global online forums.
+            </span>
+
+            <span class="inline-lang" data-lang="es">
+              Articulación estratégica entre entidades subnacionales, bloques económicos y entornos digitales.
+            </span>
+
+            <span class="inline-lang" data-lang="fr">
+              Articulation stratégique entre entités infranationales, blocs économiques et environnements numériques.
+            </span>
+
+            <span class="inline-lang" data-lang="ar">
+              التنسيق الاستراتيجي بين الكيانات دون الوطنية والكتل الاقتصادية والبيئات الرقمية.
+            </span>
+
+            <span class="inline-lang" data-lang="zh">
+              次国家实体、经济集团与数字环境之间的战略协调。
+            </span>
+
+            <span class="inline-lang" data-lang="ru">
+              Стратегическая артикуляция между субнациональными субъектами, экономическими блоками и цифровой средой.
+            </span>
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="icon">🏛️</span>
+
+          <h3>
+            <span class="inline-lang active" data-lang="pt">Advocacy &amp; Representação Lícita</span>
+            <span class="inline-lang" data-lang="en">Lawful Advocacy &amp; Representation</span>
+            <span class="inline-lang" data-lang="es">Incidencia &amp; Representación Lícita</span>
+            <span class="inline-lang" data-lang="fr">Plaidoyer &amp; Représentation Licite</span>
+            <span class="inline-lang" data-lang="ar">المناصرة والتمثيل المشروع</span>
+            <span class="inline-lang" data-lang="zh">合规倡导与利益代表</span>
+            <span class="inline-lang" data-lang="ru">Законная адвокация и представительство</span>
+          </h3>
+
+          <p>
+            <span class="inline-lang active" data-lang="pt">
+              Representação técnica de interesses por associações de classe, câmaras setoriais e redes institucionais, com conformidade regulatória.
+            </span>
+
+            <span class="inline-lang" data-lang="en">
+              Technical interest representation through trade associations, sectoral chambers and institutional networks, with regulatory compliance.
+            </span>
+
+            <span class="inline-lang" data-lang="es">
+              Representación técnica de intereses mediante asociaciones gremiales, cámaras sectoriales y redes institucionales.
+            </span>
+
+            <span class="inline-lang" data-lang="fr">
+              Représentation technique d'intérêts via associations professionnelles, chambres sectorielles et réseaux institutionnels.
+            </span>
+
+            <span class="inline-lang" data-lang="ar">
+              تمثيل تقني للمصالح عبر الجمعيات التجارية والغرف القطاعية والشبكات المؤسسية.
+            </span>
+
+            <span class="inline-lang" data-lang="zh">
+              通过行业协会、行业商会和机构网络进行专业利益代表。
+            </span>
+
+            <span class="inline-lang" data-lang="ru">
+              Техническое представление интересов через отраслевые ассоциации и институциональные сети.
+            </span>
+          </p>
+        </article>
+
+        <article class="service-card">
+          <span class="icon">🗺️</span>
+
+          <h3>
+            <span class="inline-lang active" data-lang="pt">Marketing Geopolítico</span>
+            <span class="inline-lang" data-lang="en">Geopolitical Marketing</span>
+            <span class="inline-lang" data-lang="es">Marketing Geopolítico</span>
+            <span class="inline-lang" data-lang="fr">Marketing Géopolitique</span>
+            <span class="inline-lang" data-lang="ar">التسويق الجيوسياسي</span>
+            <span class="inline-lang" data-lang="zh">地缘政治营销</span>
+            <span class="inline-lang" data-lang="ru">Геополитический маркетинг</span>
+          </h3>
+
+          <p>
+            <span class="inline-lang active" data-lang="pt">
+              Posicionamento em nichos linguísticos globais com lente de blocos econômicos, riscos de mercado e contextos regulatórios.
+            </span>
+
+            <span class="inline-lang" data-lang="en">
+              Positioning in global linguistic niches through economic blocs, market risk and regulatory context.
+            </span>
+
+            <span class="inline-lang" data-lang="es">
+              Posicionamiento en nichos lingüísticos globales con perspectiva de bloques económicos, riesgo y regulación.
+            </span>
+
+            <span class="inline-lang" data-lang="fr">
+              Positionnement dans des niches linguistiques mondiales au prisme des blocs économiques, des risques et de la réglementation.
+            </span>
+
+            <span class="inline-lang" data-lang="ar">
+              التموضع في المتخصصات اللغوية العالمية مع منظور الكتل الاقتصادية والمخاطر واللوائح.
+            </span>
+
+            <span class="inline-lang" data-lang="zh">
+              以经济集团、市场风险与监管环境为视角的全球语言细分市场定位。
+            </span>
+
+            <span class="inline-lang" data-lang="ru">
+              Позиционирование в глобальных языковых нишах с учётом экономических блоков, рисков и регулирования.
+            </span>
+          </p>
+
+          <div class="tag-list">
+            <span class="tag">BRICS+</span>
+            <span class="tag">EU</span>
+            <span class="tag">ASEAN</span>
+            <span class="tag">Mercosul</span>
+            <span class="tag">G20</span>
+            <span class="tag">CPLP</span>
+            <span class="tag">UA</span>
+            <span class="tag">OIC</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <span class="icon">⚖️</span>
+
+          <h3>
+            <span class="inline-lang active" data-lang="pt">Marketing, Compliance &amp; Governança</span>
+            <span class="inline-lang" data-lang="en">Marketing, Compliance &amp; Governance</span>
+            <span class="inline-lang" data-lang="es">Marketing, Cumplimiento &amp; Gobernanza</span>
+            <span class="inline-lang" data-lang="fr">Marketing, Conformité &amp; Gouvernance</span>
+            <span class="inline-lang" data-lang="ar">التسويق والامتثال والحوكمة</span>
+            <span class="inline-lang" data-lang="zh">营销、合规与治理</span>
+            <span class="inline-lang" data-lang="ru">Маркетинг, комплаенс и управление</span>
+          </h3>
+
+          <p>
+            <span class="inline-lang active" data-lang="pt">
+              Comunicação institucional alinhada a ISO 27001, ISO 31000, ISO 42001, ESG, LGPD e gestão de risco reputacional.
+            </span>
+
+            <span class="inline-lang" data-lang="en">
+              Institutional communication aligned with ISO 27001, ISO 31000, ISO 42001, ESG, LGPD and reputational risk management.
+            </span>
+
+            <span class="inline-lang" data-lang="es">
+              Comunicación institucional alineada con ISO 27001, ISO 31000, ISO 42001, ESG, LGPD y gestión de riesgo reputacional.
+            </span>
+
+            <span class="inline-lang" data-lang="fr">
+              Communication institutionnelle alignée sur ISO 27001, ISO 31000, ISO 42001, ESG, LGPD et gestion du risque réputationnel.
+            </span>
+
+            <span class="inline-lang" data-lang="ar">
+              اتصال مؤسسي متوافق مع ISO 27001 وISO 31000 وISO 42001 وESG وLGPD وإدارة المخاطر السمعية.
+            </span>
+
+            <span class="inline-lang" data-lang="zh">
+              符合ISO 27001、ISO 31000、ISO 42001、ESG和LGPD的机构传播与声誉风险管理。
+            </span>
+
+            <span class="inline-lang" data-lang="ru">
+              Институциональные коммуникации в соответствии с ISO 27001, ISO 31000, ISO 42001, ESG, LGPD и управлением репутационными рисками.
+            </span>
+          </p>
+        </article>
+
+        <!-- CARD CINZA: LOGOMARCA COMPLETA -->
+        <article class="service-card logo-card" aria-label="Lessa Machado Negócios e Cia">
+          <div class="logo-lockup">
+
+            <svg class="logo-symbol" viewBox="0 0 52 52" fill="none"
+                 xmlns="http://www.w3.org/2000/svg"
+                 role="img"
+                 aria-label="Símbolo da Tríplice Hélice">
+
+              <path d="M26 6 C14 6 6 14 6 26"
+                    stroke="currentColor" stroke-width="1.6"
+                    fill="none" stroke-linecap="round"/>
+
+              <path d="M26 6 C38 6 46 14 46 26"
+                    stroke="currentColor" stroke-width="1.6"
+                    fill="none" stroke-linecap="round"/>
+
+              <path d="M6 26 C6 38 14 46 26 46"
+                    stroke="currentColor" stroke-width="1.6"
+                    fill="none" stroke-linecap="round"/>
+
+              <path d="M46 26 C46 38 38 46 26 46"
+                    stroke="currentColor" stroke-width="1.6"
+                    fill="none" stroke-linecap="round"/>
+
+              <path d="M6 26 C10 18 18 14 26 16"
+                    stroke="currentColor" stroke-width="1"
+                    fill="none" stroke-linecap="round"
+                    stroke-dasharray="2 3"/>
+
+              <path d="M46 26 C42 18 34 14 26 16"
+                    stroke="currentColor" stroke-width="1"
+                    fill="none" stroke-linecap="round"
+                    stroke-dasharray="2 3"/>
+
+              <circle cx="26" cy="26" r="2.2" fill="currentColor"/>
+              <circle cx="26" cy="6" r="1.5" fill="currentColor"/>
+              <circle cx="6" cy="26" r="1.5" fill="currentColor"/>
+              <circle cx="46" cy="26" r="1.5" fill="currentColor"/>
+            </svg>
+
+            <div class="logo-wordmark">
+              <span class="logo-name">Lessa Machado</span>
+              <span class="logo-subtitle">Negócios &amp; Cia</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="helice">
+      <h2>
+        <span class="inline-lang active" data-lang="pt">A Tríplice Hélice como Alavanca</span>
+        <span class="inline-lang" data-lang="en">The Triple Helix as Leverage</span>
+        <span class="inline-lang" data-lang="es">La Triple Hélice como Palanca</span>
+        <span class="inline-lang" data-lang="fr">La Triple Hélice comme Levier</span>
+        <span class="inline-lang" data-lang="ar">الحلزون الثلاثي كرافعة للفرص</span>
+        <span class="inline-lang" data-lang="zh">三螺旋作为战略杠杆</span>
+        <span class="inline-lang" data-lang="ru">Тройная спираль как рычаг</span>
+      </h2>
+
+      <div class="helix-row">
+        <div class="helix-cell">
+          <div class="h-label">I — Governo</div>
+          <div class="h-title">Regulação &amp; Política</div>
+        </div>
+
+        <div class="helix-cell">
+          <div class="h-label">II — Setor Privado</div>
+          <div class="h-title">Mercado &amp; Inovação</div>
+        </div>
+
+        <div class="helix-cell">
+          <div class="h-label">III — Ciência</div>
+          <div class="h-title">Conhecimento &amp; P&amp;D</div>
+        </div>
+      </div>
+
+      <p class="helix-note">
+        Etzkowitz &amp; Leydesdorff (1995): a convergência entre Governo, Setor Privado e Ciência cria zonas de oportunidade nas quais a estratégia institucional atua como tradução, articulação e amplificação.
+      </p>
+    </section>
+
+    <section id="contato">
+      <h2>
+        <span class="inline-lang active" data-lang="pt">Contato</span>
+        <span class="inline-lang" data-lang="en">Contact</span>
+        <span class="inline-lang" data-lang="es">Contacto</span>
+        <span class="inline-lang" data-lang="fr">Contact</span>
+        <span class="inline-lang" data-lang="ar">التواصل</span>
+        <span class="inline-lang" data-lang="zh">联系方式</span>
+        <span class="inline-lang" data-lang="ru">Контакт</span>
+      </h2>
+
+      <div class="contact-block">
         <h3>
-          <span class="il active" data-lang="pt">Paradiplomacia Digital</span>
-          <span class="il" data-lang="en">Digital Paradiplomacy</span>
-          <span class="il" data-lang="es">Paradiplomacia Digital</span>
-          <span class="il" data-lang="fr">Paradiplomatie Numérique</span>
-          <span class="il" data-lang="ar">الدبلوماسية الرقمية الموازية</span>
-          <span class="il" data-lang="zh">数字准外交</span>
-          <span class="il" data-lang="ru">Цифровая парадипломатия</span>
+          <span class="inline-lang active" data-lang="pt">E-mail institucional</span>
+          <span class="inline-lang" data-lang="en">Institutional e-mail</span>
+          <span class="inline-lang" data-lang="es">Correo institucional</span>
+          <span class="inline-lang" data-lang="fr">E-mail institutionnel</span>
+          <span class="inline-lang" data-lang="ar">البريد الإلكتروني المؤسسي</span>
+          <span class="inline-lang" data-lang="zh">机构邮箱</span>
+          <span class="inline-lang" data-lang="ru">Институциональный e-mail</span>
         </h3>
-        <p>
-          <span class="il active" data-lang="pt">Articulação estratégica entre entidades subnacionais, blocos econômicos e ambientes digitais. Presença institucional em fóruns globais online — serviço prioritário.</span>
-          <span class="il" data-lang="en">Strategic articulation between subnational entities, economic blocs and digital environments. Institutional presence in global online forums — priority service.</span>
-          <span class="il" data-lang="es">Articulación estratégica entre entidades subnacionales, bloques económicos y entornos digitales. Presencia institucional en foros globales en línea.</span>
-          <span class="il" data-lang="fr">Articulation stratégique entre entités infranationales, blocs économiques et environnements numériques. Présence institutionnelle dans les forums mondiaux en ligne.</span>
-          <span class="il" data-lang="ar">التنسيق الاستراتيجي بين الكيانات دون الوطنية والكتل الاقتصادية والبيئات الرقمية. حضور مؤسسي في المنتديات العالمية عبر الإنترنت.</span>
-          <span class="il" data-lang="zh">次国家实体、经济集团与数字环境之间的战略协调，在全球在线论坛中建立机构存在——优先服务。</span>
-          <span class="il" data-lang="ru">Стратегическая артикуляция между субнациональными субъектами, экономическими блоками и цифровой средой. Институциональное присутствие на глобальных онлайн-форумах.</span>
-        </p>
+
+        <a href="mailto:lessamachadonegociosecia@gmail.com">
+          lessamachadonegociosecia@gmail.com
+        </a>
+
+        <p class="contact-note">Rio de Janeiro · Brasil</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <svg width="28" height="28" viewBox="0 0 52 52" fill="none"
+               xmlns="http://www.w3.org/2000/svg"
+               aria-hidden="true">
+
+            <path d="M26 6 C14 6 6 14 6 26"
+                  stroke="#1a1a2e" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+
+            <path d="M26 6 C38 6 46 14 46 26"
+                  stroke="#1a1a2e" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+
+            <path d="M6 26 C6 38 14 46 26 46"
+                  stroke="#1a1a2e" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+
+            <path d="M46 26 C46 38 38 46 26 46"
+                  stroke="#1a1a2e" stroke-width="1.6"
+                  fill="none" stroke-linecap="round"/>
+
+            <circle cx="26" cy="26" r="2.2" fill="#1a1a2e"/>
+            <circle cx="26" cy="6" r="1.5" fill="#1a1a2e"/>
+            <circle cx="6" cy="26" r="1.5" fill="#1a1a2e"/>
+            <circle cx="46" cy="26" r="1.5" fill="#1a1a2e"/>
+          </svg>
+
+          <span class="footer-brand-name">Lessa Machado Negócios &amp; Cia</span>
+        </div>
+
+        <p class="footer-note">Rio de Janeiro · Brasil · 2026</p>
       </div>
 
-      <div class="service-card">
-        <span class="icon">🏛️</span>
-        <h3>
-          <span class="il active" data-lang="pt">Lobby Lícito &amp; Advocacy</span>
-          <span class="il" data-lang="en">Lawful Lobbying &amp; Advocacy</span>
-          <span class="il" data-lang="es">Lobby Lícito &amp; Incidencia</span>
-          <span class="il" data-lang="fr">Lobbying Licite &amp; Plaidoyer</span>
-          <span class="il" data-lang="ar">الضغط المشروع والمناصرة</span>
-          <span class="il" data-lang="zh">合规游说与倡导</span>
-          <span class="il" data-lang="ru">Законный лоббизм и адвокатура</span>
-        </h3>
-        <p>
-          <span class="il active" data-lang="pt">Representação de interesses via associações de classe, câmaras setoriais e redes institucionais. Conformidade com marcos regulatórios brasileiros e internacionais.</span>
-          <span class="il" data-lang="en">Interest representation through trade associations, sectoral chambers and institutional networks. Full compliance with Brazilian and international regulatory frameworks.</span>
-          <span class="il" data-lang="es">Representación de intereses a través de asociaciones gremiales, cámaras sectoriales y redes institucionales. Plena conformidad regulatoria.</span>
-          <span class="il" data-lang="fr">Représentation d'intérêts via associations professionnelles, chambres sectorielles et réseaux institutionnels. Conformité totale aux cadres réglementaires.</span>
-          <span class="il" data-lang="ar">تمثيل المصالح عبر الجمعيات التجارية والغرف القطاعية والشبكات المؤسسية. امتثال كامل للأطر التنظيمية.</span>
-          <span class="il" data-lang="zh">通过行业协会、行业商会及机构网络进行利益代表，全面符合巴西及国际监管框架。</span>
-          <span class="il" data-lang="ru">Представление интересов через отраслевые ассоциации, секторальные палаты и институциональные сети. Полное соответствие нормативным требованиям.</span>
-        </p>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">🗺️</span>
-        <h3>
-          <span class="il active" data-lang="pt">Marketing Geopolítico</span>
-          <span class="il" data-lang="en">Geopolitical Marketing</span>
-          <span class="il" data-lang="es">Marketing Geopolítico</span>
-          <span class="il" data-lang="fr">Marketing Géopolitique</span>
-          <span class="il" data-lang="ar">التسويق الجيوسياسي</span>
-          <span class="il" data-lang="zh">地缘政治营销</span>
-          <span class="il" data-lang="ru">Геополитический маркетинг</span>
-        </h3>
-        <p>
-          <span class="il active" data-lang="pt">Posicionamento em nichos linguísticos globais com lente de blocos econômicos: BRICS+, União Europeia, ASEAN, Mercosul, G20, CPLP, UA, OIC.</span>
-          <span class="il" data-lang="en">Positioning in global linguistic niches through economic bloc lens: BRICS+, EU, ASEAN, Mercosur, G20, CPLP, AU, OIC.</span>
-          <span class="il" data-lang="es">Posicionamiento en nichos lingüísticos globales con análisis de bloques económicos: BRICS+, UE, ASEAN, Mercosur, G20, CPLP, UA, OIC.</span>
-          <span class="il" data-lang="fr">Positionnement dans des niches linguistiques mondiales au prisme des blocs économiques: BRICS+, UE, ASEAN, Mercosur, G20, CPLP, UA, OCI.</span>
-          <span class="il" data-lang="ar">التموضع في المتخصصات اللغوية العالمية بعدسة الكتل الاقتصادية: بريكس+، الاتحاد الأوروبي، آسيان، ميركوسور، مجموعة العشرين، CPLP، الاتحاد الأفريقي، منظمة التعاون الإسلامي.</span>
-          <span class="il" data-lang="zh">通过经济集团视角在全球语言细分市场定位：金砖+、欧盟、东盟、南共市、G20、葡语国家共同体、非盟、伊斯兰合作组织。</span>
-          <span class="il" data-lang="ru">Позиционирование в глобальных языковых нишах сквозь призму экономических блоков: БРИКС+, ЕС, АСЕАН, Меркосур, Г20, CPLP, АС, ОИС.</span>
-        </p>
-        <div class="tag-list">
-          <span class="tag">BRICS+</span><span class="tag">EU</span><span class="tag">ASEAN</span>
-          <span class="tag">Mercosul</span><span class="tag">G20</span><span class="tag">CPLP</span>
-          <span class="tag">UA</span><span class="tag">OIC</span>
-        </div>
-      </div>
-
-      <div class="service-card">
-        <span class="icon">⚖️</span>
-        <h3>
-          <span class="il active" data-lang="pt">MKT · Compliance · Governança</span>
-          <span class="il" data-lang="en">MKT · Compliance · Governance</span>
-          <span class="il" data-lang="es">MKT · Cumplimiento · Gobernanza</span>
-          <span class="il" data-lang="fr">MKT · Conformité · Gouvernance</span>
-          <span class="il" data-lang="ar">التسويق · الامتثال · الحوكمة</span>
-          <span class="il" data-lang="zh">营销·合规·治理</span>
-          <span class="il" data-lang="ru">МКТ · Комплаенс · Управление</span>
-        </h3>
-        <p>
-          <span class="il active" data-lang="pt">Campanhas alinhadas a ISO 27001, ISO 31000, ISO 42001, ESG e LGPD. Gestão de risco reputacional e narrativa institucional responsável.</span>
-          <span class="il" data-lang="en">Campaigns aligned to ISO 27001, ISO 31000, ISO 42001, ESG and LGPD. Reputational risk management and responsible institutional narrative.</span>
-          <span class="il" data-lang="es">Campañas alineadas con ISO 27001, ISO 31000, ISO 42001, ESG y LGPD. Gestión del riesgo reputacional y narrativa institucional responsable.</span>
-          <span class="il" data-lang="fr">Campagnes alignées sur ISO 27001, ISO 31000, ISO 42001, ESG et LGPD. Gestion du risque réputationnel et narrative institutionnelle responsable.</span>
-          <span class="il" data-lang="ar">حملات متوافقة مع ISO 27001 وISO 31000 وISO 42001 وESG وLGPD. إدارة المخاطر السمعية والسرد المؤسسي المسؤول.</span>
-          <span class="il" data-lang="zh">符合ISO 27001、ISO 31000、ISO 42001、ESG和LGPD的营销活动。声誉风险管理与负责任的机构叙事。</span>
-          <span class="il" data-lang="ru">Кампании по стандартам ISO 27001, ISO 31000, ISO 42001, ESG и LGPD. Управление репутационными рисками и ответственный нарратив.</span>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- TRÍPLICE HÉLICE -->
-  <section id="helice">
-    <h2>
-      <span class="il active" data-lang="pt">A Tríplice Hélice como Alavanca</span>
-      <span class="il" data-lang="en">The Triple Helix as Leverage</span>
-      <span class="il" data-lang="es">La Triple Hélice como Palanca</span>
-      <span class="il" data-lang="fr">La Triple Hélice comme Levier</span>
-      <span class="il" data-lang="ar">الحلزون الثلاثي كرافعة للفرص</span>
-      <span class="il" data-lang="zh">三螺旋作为战略杠杆</span>
-      <span class="il" data-lang="ru">Тройная спираль как рычаг</span>
-    </h2>
-
-    <div class="helix-row">
-      <div class="helix-cell">
-        <div class="h-label">
-          <span class="il active" data-lang="pt">I — Governo</span>
-          <span class="il" data-lang="en">I — Government</span>
-          <span class="il" data-lang="es">I — Gobierno</span>
-          <span class="il" data-lang="fr">I — Gouvernement</span>
-          <span class="il" data-lang="ar">١ — الحكومة</span>
-          <span class="il" data-lang="zh">一 — 政府</span>
-          <span class="il" data-lang="ru">I — Правительство</span>
-        </div>
-        <div class="h-title">
-          <span class="il active" data-lang="pt">Regulação &amp; Política</span>
-          <span class="il" data-lang="en">Regulation &amp; Policy</span>
-          <span class="il" data-lang="es">Regulación &amp; Política</span>
-          <span class="il" data-lang="fr">Régulation &amp; Politique</span>
-          <span class="il" data-lang="ar">التنظيم والسياسة</span>
-          <span class="il" data-lang="zh">监管与政策</span>
-          <span class="il" data-lang="ru">Регулирование и политика</span>
-        </div>
-      </div>
-      <div class="helix-cell">
-        <div class="h-label">
-          <span class="il active" data-lang="pt">II — Setor Privado</span>
-          <span class="il" data-lang="en">II — Private Sector</span>
-          <span class="il" data-lang="es">II — Sector Privado</span>
-          <span class="il" data-lang="fr">II — Secteur Privé</span>
-          <span class="il" data-lang="ar">٢ — القطاع الخاص</span>
-          <span class="il" data-lang="zh">二 — 私营部门</span>
-          <span class="il" data-lang="ru">II — Частный сектор</span>
-        </div>
-        <div class="h-title">
-          <span class="il active" data-lang="pt">Mercado &amp; Inovação</span>
-          <span class="il" data-lang="en">Market &amp; Innovation</span>
-          <span class="il" data-lang="es">Mercado &amp; Innovación</span>
-          <span class="il" data-lang="fr">Marché &amp; Innovation</span>
-          <span class="il" data-lang="ar">السوق والابتكار</span>
-          <span class="il" data-lang="zh">市场与创新</span>
-          <span class="il" data-lang="ru">Рынок и инновации</span>
-        </div>
-      </div>
-      <div class="helix-cell">
-        <div class="h-label">
-          <span class="il active" data-lang="pt">III — Ciência</span>
-          <span class="il" data-lang="en">III — Science</span>
-          <span class="il" data-lang="es">III — Ciencia</span>
-          <span class="il" data-lang="fr">III — Science</span>
-          <span class="il" data-lang="ar">٣ — العلوم</span>
-          <span class="il" data-lang="zh">三 — 科学</span>
-          <span class="il" data-lang="ru">III — Наука</span>
-        </div>
-        <div class="h-title">
-          <span class="il active" data-lang="pt">Conhecimento &amp; P&amp;D</span>
-          <span class="il" data-lang="en">Knowledge &amp; R&amp;D</span>
-          <span class="il" data-lang="es">Conocimiento &amp; I+D</span>
-          <span class="il" data-lang="fr">Connaissance &amp; R&amp;D</span>
-          <span class="il" data-lang="ar">المعرفة والبحث والتطوير</span>
-          <span class="il" data-lang="zh">知识与研发</span>
-          <span class="il" data-lang="ru">Знания и НИОКР</span>
-        </div>
+      <div class="footer-links">
+        <a href="#servicos">Serviços / Services</a>
+        <a href="#helice">Tríplice Hélice</a>
+        <a href="mailto:lessamachadonegociosecia@gmail.com">
+          lessamachadonegociosecia@gmail.com
+        </a>
       </div>
     </div>
+  </footer>
 
-    <p class="helix-note">
-      <span class="il active" data-lang="pt">Etzkowitz &amp; Leydesdorff (1995) — A convergência dos três vértices cria zonas de oportunidade onde o marketing estratégico atua como tradutor e amplificador.</span>
-      <span class="il" data-lang="en">Etzkowitz &amp; Leydesdorff (1995) — Convergence of the three vertices creates opportunity zones where strategic marketing acts as translator and amplifier.</span>
-      <span class="il" data-lang="es">Etzkowitz &amp; Leydesdorff (1995) — La convergencia de los tres vértices crea zonas de oportunidad donde el marketing estratégico actúa como traductor y amplificador.</span>
-      <span class="il" data-lang="fr">Etzkowitz &amp; Leydesdorff (1995) — La convergence des trois sommets crée des zones d'opportunité où le marketing stratégique agit comme traducteur et amplificateur.</span>
-      <span class="il" data-lang="ar">إتزكوويتز وليدسدورف (1995) — يخلق تقاطع الرؤوس الثلاثة مناطق فرص يعمل فيها التسويق الاستراتيجي كمترجم ومضخم.</span>
-      <span class="il" data-lang="zh">埃茨科维兹与莱德斯多夫（1995）——三个顶点的汇聚创造机遇区，战略营销在其中充当翻译器与放大器。</span>
-      <span class="il" data-lang="ru">Этцкович и Лейдесдорф (1995) — Конвергенция трёх вершин создаёт зоны возможностей, где стратегический маркетинг выступает переводчиком и усилителем.</span>
-    </p>
-  </section>
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach((element) => {
+        element.classList.remove("active");
+      });
 
-  <!-- CONTACT -->
-  <section id="contato">
-    <h2>
-      <span class="il active" data-lang="pt">Contato</span>
-      <span class="il" data-lang="en">Contact</span>
-      <span class="il" data-lang="es">Contacto</span>
-      <span class="il" data-lang="fr">Contact</span>
-      <span class="il" data-lang="ar">التواصل</span>
-      <span class="il" data-lang="zh">联系方式</span>
-      <span class="il" data-lang="ru">Контакт</span>
-    </h2>
-    <div class="contact-block">
-      <h3>
-        <span class="il active" data-lang="pt">E-mail institucional</span>
-        <span class="il" data-lang="en">Institutional e-mail</span>
-        <span class="il" data-lang="es">Correo institucional</span>
-        <span class="il" data-lang="fr">E-mail institutionnel</span>
-        <span class="il" data-lang="ar">البريد الإلكتروني المؤسسي</span>
-        <span class="il" data-lang="zh">机构邮箱</span>
-        <span class="il" data-lang="ru">Институциональный e-mail</span>
-      </h3>
-      <a href="mailto:lessamachadonegociosecia@gmail.com">lessamachadonegociosecia@gmail.com</a>
-      <p class="contact-note">Rio de Janeiro · Brasil</p>
-    </div>
-  </section>
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        button.classList.remove("active");
+      });
 
-</main>
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach((element) => {
+        element.classList.add("active");
+      });
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div>
-      <div class="footer-logo">
-        <svg width="28" height="28" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M26 6 C14 6 6 14 6 26" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-          <path d="M26 6 C38 6 46 14 46 26" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-          <path d="M6 26 C6 38 14 46 26 46" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-          <path d="M46 26 C46 38 38 46 26 46" stroke="#1a1a2e" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-          <circle cx="26" cy="26" r="2.2" fill="#1a1a2e"/>
-          <circle cx="26" cy="6" r="1.5" fill="#1a1a2e"/>
-          <circle cx="6" cy="26" r="1.5" fill="#1a1a2e"/>
-          <circle cx="46" cy="26" r="1.5" fill="#1a1a2e"/>
-        </svg>
-        <span class="footer-brand-name">Lessa Machado Negócios &amp; Cia</span>
-      </div>
-      <p class="footer-note">Rio de Janeiro · Brasil · 2025</p>
-    </div>
-    <div class="footer-links">
-      <a href="#servicos">Serviços / Services</a>
-      <a href="#helice">Tríplice Hélice</a>
-      <a href="mailto:lessamachadonegociosecia@gmail.com">lessamachadonegociosecia@gmail.com</a>
-    </div>
-  </div>
-</footer>
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        if (button.textContent.trim().toLowerCase() === lang) {
+          button.classList.add("active");
+        }
+      });
 
-<script>
-  let cur = 'pt';
-  function setLang(lang) {
-    // remove active de todos
-    document.querySelectorAll('[data-lang]').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-    // ativa os do lang escolhido
-    document.querySelectorAll('[data-lang="' + lang + '"]').forEach(el => el.classList.add('active'));
-    document.querySelector('[onclick="setLang(\'' + lang + '\')"]').classList.add('active');
-    // RTL para árabe
-    document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang;
-    cur = lang;
-  }
-</script>
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+    }
+  </script>
+
 </body>
 </html>
