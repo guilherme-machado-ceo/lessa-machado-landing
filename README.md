@@ -113,17 +113,6 @@ A logomarca utiliza uma interpretação geométrica da **Tríplice Hélice**:
 
 A marca está implementada como SVG inline no `index.html`, garantindo boa qualidade em telas retina, baixo peso e carregamento sem arquivos externos.
 
-## Publicação
-
-O deploy é automático pelo GitHub Pages após commits na branch configurada.
-
-Para atualizar a página:
-
-1. Edite `index.html`
-2. Faça commit das alterações na branch `main`
-3. Aguarde a publicação automática do GitHub Pages
-4. Limpe o cache do navegador caso a atualização não apareça imediatamente
-
 ## Licença
 
 © Lessa Machado Negócios & Cia. Todos os direitos reservados.
